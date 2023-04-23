@@ -9,6 +9,10 @@ class NBPBenchmarker(Benchmarker):
     test = 'ft'
     size = 'S'
 
+    def set_test(self, test, size):
+        self.test = test
+        self.size = size
+
     def generate_config(self, compiler):
         f = open("./NPB3.0-omp-C/config/make.def", "r")
         lines = f.readlines()

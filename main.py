@@ -3,6 +3,7 @@ from src.nbp_benchmarker import *
 
 def main():
     nbp_b = NBPBenchmarker()
+    nbp_b.set_test('ft', 'S')
     nbp_b.run()
 
 
