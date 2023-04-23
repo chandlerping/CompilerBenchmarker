@@ -37,6 +37,7 @@ class NBPBenchmarker(Benchmarker):
         os.chdir('bin')
         cmd = './' + self.test + '.' + self.size
         self.output = subprocess.check_output(cmd, shell=True, universal_newlines=True)
+        print(self.output)
         os.chdir('../..')
 
     def report(self):
