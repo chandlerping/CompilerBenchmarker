@@ -37,13 +37,14 @@ class NBPBenchmarker(Benchmarker):
         os.chdir('bin')
         cmd = './' + self.test + '.' + self.size
         self.output = subprocess.check_output(cmd, shell=True, universal_newlines=True)
-        print(self.output)
+        # print(self.output)
         os.chdir('../..')
 
     def report(self):
         os.chdir('NPB3.0-omp-C')
         file_size = check_size('./bin/' + self.test + '.' + self.size)
         ex_time = 0
+        print(self.output)
         for line in self.output:
             # print(line)
             if "Time" in line:
