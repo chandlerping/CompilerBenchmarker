@@ -37,7 +37,6 @@ class NBPBenchmarker(Benchmarker):
         os.chdir('bin')
         cmd = './' + self.test + '.' + self.size
         self.output = subprocess.check_output(cmd, shell=True, universal_newlines=True)
-        print(self.output)
         os.chdir('../..')
 
     def report(self):
@@ -46,6 +45,7 @@ class NBPBenchmarker(Benchmarker):
         ex_time = 0
         for line in self.output:
             if 'Time in seconds' in line:
+                print("chandler                              chandler")
                 ex_time = line.split()[-1]
                 print(line)
         os.chdir('..')
