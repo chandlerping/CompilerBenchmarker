@@ -11,6 +11,8 @@ class Benchmarker:
         pass
 
     def report(self):
+        # return [filesize, time]
+        return []
         pass
 
     def run(self):
@@ -23,6 +25,6 @@ class Benchmarker:
 
         print('\n\n\n Comparing opt group ', self.group)
         print('gcc')
-        print(result_gcc)
+        print('file size ', result_gcc[0], '    executiion time', result_gcc[1])
         print('llvm')
-        print(result_llvm)
+        print('file size ', result_llvm[0], '    executiion time', result_llvm[1])
