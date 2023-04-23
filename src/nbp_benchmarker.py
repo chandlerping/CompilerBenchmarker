@@ -33,6 +33,7 @@ class NBPBenchmarker(Benchmarker):
         lines[24] = 'CFLAGS	= ' + flags + '\n'
         f = open("./NPB3.0-omp-C/config/make.def", "w+")
         f.writelines(lines)
+        f.close()
 
     def benchmark(self):
         os.chdir('NPB3.0-omp-C')
