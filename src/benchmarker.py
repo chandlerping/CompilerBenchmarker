@@ -14,10 +14,14 @@ class Benchmarker:
         pass
 
     def run(self):
-        self.generate_config('clang')
-        self.benchmark()
-        result_gcc = self.report()
+        print('\n Comparing opt group ', self.group)
         self.generate_config('gcc')
         self.benchmark()
+        print('gcc')
+        result_gcc = self.report()
+        print(result_gcc)
+        self.generate_config('llvm')
+        self.benchmark()
+        print('llvm')
         result_llvm = self.report()
-        print(result_gcc, result_llvm)
+        print(result_llvm)
