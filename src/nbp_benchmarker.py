@@ -40,7 +40,7 @@ class NBPBenchmarker(Benchmarker):
         os.chdir('../..')
 
     def report(self):
-        os.chdir('NBP3.0-omp-C')
+        os.chdir('NPB3.0-omp-C')
         file_size = check_size('./bin/' + self.test + '.' + self.size)
         ex_time = 0
         for line in self.output:
