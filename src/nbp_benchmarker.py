@@ -44,6 +44,7 @@ class NBPBenchmarker(Benchmarker):
         file_size = check_size('./bin/' + self.test + '.' + self.size)
         ex_time = 0
         for line in self.output:
+            print(type(line))
             if 'Time in seconds' in line:
                 print("chandler                              chandler")
                 ex_time = line.split()[-1]
