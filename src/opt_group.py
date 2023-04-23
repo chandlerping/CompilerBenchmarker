@@ -1,5 +1,5 @@
 # loop invariants 0 for gcc 1 for llvm
-li = []
+li = [[], []]
 li[0]= [
     '-fira-loop-pressure',
     '-ftree-loop-im',
@@ -9,7 +9,7 @@ li[0]= [
 li[1] = ['-licm']
 
 # loop unroll
-lu = []
+lu = [[], []]
 lu[0] = [
     '-fira-loop-pressure',
     '-ftree-loop-im',
@@ -22,7 +22,7 @@ lu[1] = [
 ]
 
 # dead loops
-dl = []
+dl = [[], []]
 dl[0] = [
     '-ffinite-loops',
     '-fsplit-paths'
@@ -30,7 +30,7 @@ dl[0] = [
 dl[1] = ['-loop-deletion']
 
 # structure & memory
-sm = []
+sm = [[], []]
 sm[0] = [
     '-floop-nest-optimize',
     '-ftree-loop-optimize',

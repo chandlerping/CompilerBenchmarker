@@ -10,8 +10,9 @@ class NBPBenchmarker(Benchmarker):
     size = 'A'
 
     def generate_config(self, compiler):
-        f = open("../NPB3.0-omp-C/config/make.def", "w")
+        f = open("./NPB3.0-omp-C/config/make.def", "r")
         lines = f.readlines()
+        f.close()
         cid = 0
         if compiler == 'llvm':
             cid = 1
@@ -25,10 +26,12 @@ class NBPBenchmarker(Benchmarker):
             flags = extract_flags(dl[cid])
         else:
             flags = extract_flags(sm[cid])
-        lines[24] = 'CFLAGS	= ' + flags
+        lines[24] = 'CFLAGS	= ' + flags + '\n'
+        f = open("./NPB3.0-omp-C/config/make.def", "w+")
+        f.writelines(lines)
 
     def benchmark(self):
-        os.chdir('NBP3.0-omp-C')
+        os.chdir('NPB3.0-omp-C')
         subprocess.run('make ' + self.test + ' ' + self.size)
         os.chdir('bin')
         cmd = './' + self.test + '.' + self.size

@@ -16,13 +16,13 @@
 #---------------------------------------------------------------------------
 
 #!!! JUST CHANGE THE NEXT TWO LINES FOR GCC/CLANG COMPARISON
-CC = clang
-CLINK	= clang
+CC = llvm
+CLINK	= llvm
 #!!!
 
 C_LIB  = -lm
 C_INC = -I../common
-CFLAGS	= -O3 -mcmodel=medium
+CFLAGS	=  -loop-reduce -loop-simplify
 CLINKFLAGS =
 UCC	= cc -O
 BINDIR	= ../bin
