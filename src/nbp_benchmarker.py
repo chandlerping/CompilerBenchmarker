@@ -32,7 +32,7 @@ class NBPBenchmarker(Benchmarker):
 
     def benchmark(self):
         os.chdir('NPB3.0-omp-C')
-        subprocess.run('mkdir bin')
+        subprocess.run('mkdir bin', shell=True)
         subprocess.run('make ' + self.test + ' ' + self.size, shell=True)
         os.chdir('bin')
         cmd = './' + self.test + '.' + self.size
