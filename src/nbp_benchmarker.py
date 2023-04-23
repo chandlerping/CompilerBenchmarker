@@ -37,6 +37,7 @@ class NBPBenchmarker(Benchmarker):
         os.chdir('bin')
         cmd = './' + self.test + '.' + self.size
         self.output = subprocess.check_output(cmd, shell=True, universal_newlines=True)
+        print(self.output)
         os.chdir('../..')
 
     def report(self):
@@ -44,7 +45,7 @@ class NBPBenchmarker(Benchmarker):
         file_size = check_size('./bin/' + self.test + '.' + self.size)
         ex_time = 0
         for line in self.output:
-            print(line)
+            # print(line)
             if "Time" in line:
                 print("chandler                              chandler\n")
                 ex_time = line.split()[-1]
