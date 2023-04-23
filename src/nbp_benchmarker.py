@@ -36,7 +36,7 @@ class NBPBenchmarker(Benchmarker):
         subprocess.run('make ' + self.test + ' ' + self.size, shell=True)
         os.chdir('bin')
         cmd = './' + self.test + '.' + self.size
-        self.output = subprocess.check_output(cmd, shell=True)
+        self.output = subprocess.get_output(cmd)
         print(type(self.output))
         os.chdir('../..')
 
