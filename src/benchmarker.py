@@ -1,7 +1,7 @@
 class Benchmarker:
     # li lu dl sm
     group = ''
-    compilers = ['gcc', 'llvm']
+    compilers = ['gcc', 'clang']
     output = []
 
     def generate_config(self, compiler):
@@ -14,7 +14,7 @@ class Benchmarker:
         pass
 
     def run(self):
-        self.generate_config('llvm')
+        self.generate_config('clang')
         self.benchmark()
         result_gcc = self.report()
         self.generate_config('gcc')
