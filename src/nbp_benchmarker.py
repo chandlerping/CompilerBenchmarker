@@ -20,7 +20,7 @@ class NBPBenchmarker(Benchmarker):
         lines = f.readlines()
         f.close()
         cid = 0
-        if compiler == 'clang':
+        if compiler == 'llvm':
             cid = 1
         lines[18] = "CC = {}\n".format(self.compilers[cid])
         lines[19] = "CLINK	= {}\n".format(self.compilers[cid])
