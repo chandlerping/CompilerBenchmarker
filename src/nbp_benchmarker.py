@@ -1,5 +1,5 @@
 from src.benchmarker import Benchmarker
-from utils import *
+from src.utils import *
 from src.opt_group import *
 import subprocess
 import re
