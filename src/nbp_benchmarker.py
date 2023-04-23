@@ -36,8 +36,7 @@ class NBPBenchmarker(Benchmarker):
         subprocess.run('make ' + self.test + ' ' + self.size, shell=True)
         os.chdir('bin')
         cmd = './' + self.test + '.' + self.size
-        self.output = subprocess.getoutput(cmd)
-        print(self.output)
+        self.output = subprocess.getoutput(cmd).split('\n')
         os.chdir('../..')
 
     def report(self):
@@ -46,9 +45,7 @@ class NBPBenchmarker(Benchmarker):
         ex_time = 0
         print(len(self.output))
         for line in self.output:
-            # print(line)
             if "Time" in line:
-                print("chandler                              chandler\n")
                 ex_time = line.split()[-1]
                 print(line)
         os.chdir('..')
