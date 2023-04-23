@@ -6,4 +6,4 @@ The grouping can be found in ```src/utils```.
 ## Benchmark
 Benchmark programs include NPB3.0, TSVC2 (TBD), BEEBS (TBD).
 ## Running
-"main.py" is a small demo.
+```main.py``` is a small demo.
