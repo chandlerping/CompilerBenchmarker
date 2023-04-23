@@ -4,20 +4,21 @@ li[0]= [
     '-fira-loop-pressure',
     '-ftree-loop-im',
     '-fmove-loop-invariants',
-    '-fmove-loop-stores'
+    # '-fmove-loop-stores'
 ]
 li[1] = ['-licm']
 
 # loop unroll
 lu = [[], []]
 lu[0] = [
-    '-fira-loop-pressure',
-    '-ftree-loop-im',
-    '-fmove-loop-invariants',
-    '-fmove-loop-stores'
+    '-ftree-loop-ivcanon',
+    '-faggressive-loop-optimizations',
+    '-floop-unroll-and-jam',
+    '-funroll-loop',
+    '-funroll-all-loops'
 ]
 lu[1] = [
-    '-loop-unroll: Unroll loops',
+    '-loop-unroll',
     '-loop-unroll-and-jam'
 ]
 
