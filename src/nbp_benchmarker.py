@@ -48,10 +48,8 @@ class NBPBenchmarker(Benchmarker):
         os.chdir('NPB3.0-omp-C')
         file_size = check_size('./bin/' + self.test + '.' + self.size)
         ex_time = 0
-        print(len(self.output))
         for line in self.output:
             if "Time" in line:
                 ex_time = line.split()[-1]
-                print(line)
         os.chdir('..')
         return file_size, ex_time

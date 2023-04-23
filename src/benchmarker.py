@@ -14,14 +14,15 @@ class Benchmarker:
         pass
 
     def run(self):
-        print('\n Comparing opt group ', self.group)
         self.generate_config('gcc')
         self.benchmark()
-        print('gcc')
         result_gcc = self.report()
-        print(result_gcc)
         self.generate_config('llvm')
         self.benchmark()
-        print('llvm')
         result_llvm = self.report()
+
+        print('\n\n\n Comparing opt group ', self.group)
+        print('gcc')
+        print(result_gcc)
+        print('llvm')
         print(result_llvm)
