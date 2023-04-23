@@ -1,0 +1,30 @@
+#---------------------------------------------------------------------------
+# Parallel C:
+#
+# For IS, which is in C, the following must be defined:
+#
+# CC         - C compiler
+# CFLAGS     - C compilation arguments
+# C_INC      - any -I arguments required for compiling C
+# CLINK      - C linker
+# CLINKFLAGS - C linker flags
+# C_LIB      - any -L and -l arguments required for linking C
+#
+# compilations are done with $(CC) $(C_INC) $(CFLAGS) or
+#                            $(CC) $(CFLAGS)
+# linking is done with       $(CLINK) $(C_LIB) $(CLINKFLAGS)
+#---------------------------------------------------------------------------
+
+#!!! JUST CHANGE THE NEXT TWO LINES FOR GCC/CLANG COMPARISON
+CC = clang
+CLINK	= clang
+#!!!
+
+C_LIB  = -lm
+C_INC = -I../common
+CFLAGS	= -O3 -mcmodel=medium
+CLINKFLAGS =
+UCC	= cc -O
+BINDIR	= ../bin
+RAND   = randdp
+WTIME  = wtime.c
