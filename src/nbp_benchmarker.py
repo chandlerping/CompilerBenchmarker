@@ -43,4 +43,5 @@ class NBPBenchmarker(Benchmarker):
             if 'Time in seconds' in line:
                 match = re.search(r"\d+\.\d+", line)
                 ex_time = float(match.group())
+        os.chdir('..')
         return file_size, ex_time
