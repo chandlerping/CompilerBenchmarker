@@ -4,7 +4,7 @@ li[0]= [
     '-fira-loop-pressure',
     '-ftree-loop-im',
     '-fmove-loop-invariants',
-    '-fmove-loop-stores',
+    '-fmove-loop-stores'
 ]
 li[1] = ['-licm']
 
