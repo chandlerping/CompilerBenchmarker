@@ -8,10 +8,12 @@ import re
 class NBPBenchmarker(Benchmarker):
     test = 'ft'
     size = 'S'
+    group = 'li'
 
-    def set_test(self, test, size):
+    def set_test(self, test, size, group):
         self.test = test
         self.size = size
+        self.group = group
 
     def generate_config(self, compiler):
         f = open("./NPB3.0-omp-C/config/make.def", "r")
