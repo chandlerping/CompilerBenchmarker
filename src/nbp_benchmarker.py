@@ -46,5 +46,6 @@ class NBPBenchmarker(Benchmarker):
         for line in self.output:
             if 'Time in seconds' in line:
                 ex_time = line.split()[-1]
+                print(line)
         os.chdir('..')
         return file_size, ex_time
