@@ -7,7 +7,7 @@ import re
 
 class NBPBenchmarker(Benchmarker):
     test = 'ft'
-    size = 'A'
+    size = 'S'
 
     def generate_config(self, compiler):
         f = open("./NPB3.0-omp-C/config/make.def", "r")
