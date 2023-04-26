@@ -7,7 +7,7 @@ class Benchmarker:
     def generate_config(self, compiler):
         pass
 
-    def benchmark(self):
+    def benchmark(self, compiler):
         pass
 
     def report(self):
@@ -17,10 +17,10 @@ class Benchmarker:
 
     def run(self):
         self.generate_config('gcc')
-        self.benchmark()
+        self.benchmark('gcc')
         result_gcc = self.report()
         self.generate_config('llvm')
-        self.benchmark()
+        self.benchmark('llvm')
         result_llvm = self.report()
 
         print('\n\n\n Comparing opt group ', self.group)
