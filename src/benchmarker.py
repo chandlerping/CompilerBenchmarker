@@ -23,8 +23,8 @@ class Benchmarker:
         self.benchmark('llvm')
         result_llvm = self.report()
 
-        print('\n\n\n Comparing opt group ', self.group)
+        print('\n\n\nComparing opt group: ', self.group)
         print('gcc')
-        print('file size ', result_gcc[0], '    execution time', result_gcc[1])
+        print('file size ', result_gcc[0], '    execution time', result_gcc[1], '\n')
         print('llvm')
-        print('file size ', result_llvm[0], '    execution time', result_llvm[1])
+        print('file size ', result_llvm[0], '    execution time', result_llvm[1], '\n')

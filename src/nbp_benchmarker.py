@@ -14,6 +14,7 @@ class NBPBenchmarker(Benchmarker):
         self.test = test
         self.size = size
         self.group = group
+        self.run()
 
     def generate_config(self, compiler):
         f = open("./NPB3.0-omp-C/config/make.def", "r")
@@ -32,14 +33,13 @@ class NBPBenchmarker(Benchmarker):
             flags = extract_flags(dl[cid])
         else:
             flags = extract_flags(sm[cid])
-        lines[24] = 'CFLAGS	= ' + flags + '\n'
+        lines[24] = 'CFLAGS	= -Wno-unused-command-line-argument ' + flags + '\n'
         f = open("./NPB3.0-omp-C/config/make.def", "w+")
         f.writelines(lines)
         f.close()
 
     def benchmark(self, compiler):
-        print("PERFORMING COMPILATION FOR NBP TEST: ")
-        print(str(compiler) + " " + str(self.test) + " " + str(self.size) + " " + str(self.group) + "\n")
+        print("PERFORMING COMPILATION FOR NBP TEST: " + str(compiler) + " " + str(self.test) + " " + str(self.size) + " " + str(self.group))
         FNULL = open(os.devnull, 'w')
         os.chdir('NPB3.0-omp-C')
         subprocess.run('mkdir bin', shell=True,stdout=FNULL,stderr=FNULL)
