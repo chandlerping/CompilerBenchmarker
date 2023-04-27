@@ -45,7 +45,7 @@ class TSVCBenchmarker(Benchmarker):
         f.close()
 
     def benchmark(self, compiler):
-        print("PERFORMING COMPILATION FOR NBP TEST: " + str(compiler) + " " + self.mode + " " + str(self.test) + " " + str(self.group))
+        print("PERFORMING COMPILATION FOR TSVC_2 TEST: " + str(compiler) + " " + self.mode + " " + str(self.test) + " " + str(self.group))
         FNULL = open(os.devnull, 'w')
         os.chdir('TSVC_2')
 
