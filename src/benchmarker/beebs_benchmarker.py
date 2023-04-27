@@ -70,6 +70,9 @@ class BEEBSBenchmarker(Benchmarker):
 
     def report(self):
         os.chdir('src/' + str(self.test))
-        file_size = check_size(str(self.test))
-        os.chdir('../../../..')
+        file_name = self.test
+        if self.test == 'dijkstra':
+            file_name += '_small'
+        file_size = check_size(str(self.test) + '.o')
+        os.chdir('../../..')
         return file_size, self.output
