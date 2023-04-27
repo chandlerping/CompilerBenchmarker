@@ -3969,12 +3969,12 @@ int main(int argc, char ** argv){
     time_function(&s111, NULL);
     time_function(&s1111, NULL);
     time_function(&s112, NULL);
-    time_function(&s1112, NULL);
-    time_function(&s113, NULL);
-    time_function(&s1113, NULL);
-    time_function(&s114, NULL);
-    time_function(&s115, NULL);
-    time_function(&s1115, NULL);
+//    time_function(&s1112, NULL);
+//    time_function(&s113, NULL);
+//    time_function(&s1113, NULL);
+//    time_function(&s114, NULL);
+//    time_function(&s115, NULL);
+//    time_function(&s1115, NULL);
 //    time_function(&s116, NULL);
 //    time_function(&s118, NULL);
 //    time_function(&s119, NULL);
