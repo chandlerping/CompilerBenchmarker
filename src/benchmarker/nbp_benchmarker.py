@@ -1,8 +1,7 @@
-from src.benchmarker import Benchmarker
+from src.benchmarker.benchmarker import Benchmarker
 from src.utils import *
 from src.opt_group import *
 import subprocess
-import re
 
 
 class NBPBenchmarker(Benchmarker):
@@ -49,7 +48,7 @@ class NBPBenchmarker(Benchmarker):
         cmd = './' + self.test + '.' + self.size
         print("RUNNING PROGRAM AND TIMING FOR "+ str(compiler) + " " + str(self.test) + " " + str(self.size) + " " + str(self.group))
         self.output = subprocess.getoutput(cmd).split('\n')
-        os.chdir('../..')
+        os.chdir('../../..')
 
     def report(self):
         os.chdir('NPB3.0-omp-C')
@@ -58,5 +57,5 @@ class NBPBenchmarker(Benchmarker):
         for line in self.output:
             if "Time" in line:
                 ex_time = line.split()[-1]
-        os.chdir('..')
+        os.chdir('../..')
         return file_size, ex_time

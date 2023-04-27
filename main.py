@@ -1,6 +1,6 @@
-from src.nbp_benchmarker import *
-from src.tsvc_benchmarker import *
-from src.beebs_benchmarker import *
+from src.benchmarker.nbp_benchmarker import *
+from src.benchmarker.tsvc_benchmarker import *
+from src.benchmarker.beebs_benchmarker import *
 
 #####################################################################################
 #                               NBP BENCHMARK OPTIONS                               #

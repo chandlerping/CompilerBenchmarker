@@ -1,8 +1,7 @@
-from src.benchmarker import Benchmarker
+from src.benchmarker.benchmarker import Benchmarker
 from src.utils import *
 from src.opt_group import *
 import subprocess
-import re
 
 
 class BEEBSBenchmarker(Benchmarker):
@@ -11,7 +10,7 @@ class BEEBSBenchmarker(Benchmarker):
         os.chdir('beebs')
         subprocess.run('./configure', shell=True,stdout=FNULL,stderr=FNULL)
         subprocess.run('make', shell=True,stdout=FNULL,stderr=FNULL)
-        os.chdir("../")
+        os.chdir("../../")
 
     def set_test(self, test, group):
         print("Benchmark: beebs")
@@ -67,10 +66,10 @@ class BEEBSBenchmarker(Benchmarker):
         cmd = "for i in {1.." + str(self.iterations) + "}; do time ./" + str(self.test) + "; done 2>&1 | grep ^real | sed -e s/.*m// | awk '{sum += $1} END {print sum / NR}'"
         process = subprocess.Popen(cmd, shell=True, executable="/bin/bash", text=True,stdout=subprocess.PIPE)
         self.output, err = process.communicate()   
-        os.chdir('../..')
+        os.chdir('../../..')
 
     def report(self):
         os.chdir('src/' + str(self.test))
         file_size = check_size(str(self.test))
-        os.chdir('../../..')
+        os.chdir('../../../..')
         return file_size, self.output
