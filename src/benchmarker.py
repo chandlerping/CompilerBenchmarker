@@ -16,6 +16,7 @@ class Benchmarker:
         pass
 
     def run(self):
+        print("--------------------------------------------------------------------")
         self.generate_config('gcc')
         self.benchmark('gcc')
         result_gcc = self.report()
@@ -23,8 +24,7 @@ class Benchmarker:
         self.benchmark('llvm')
         result_llvm = self.report()
 
-        print('\n\n\nComparing opt group: ', self.group)
-        print('gcc')
-        print('file size ', result_gcc[0], '    execution time', result_gcc[1], '\n')
-        print('llvm')
-        print('file size ', result_llvm[0], '    execution time', result_llvm[1], '\n')
+        print('\nComparing opt group: ', self.group)
+        print('gcc: file size', result_gcc[0], '    execution time=', result_gcc[1], '\n')
+        print('llvm: file size', result_llvm[0], '    execution time=', result_llvm[1], '\n')
+        print("--------------------------------------------------------------------")
