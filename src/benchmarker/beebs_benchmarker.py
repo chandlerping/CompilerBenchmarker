@@ -19,7 +19,7 @@ class BEEBSBenchmarker(Benchmarker):
         self.run()
 
     def generate_config(self, compiler):
-        f = open("beebs/src/" + str(self.test) + "/Makefile", "r")
+        f = open("/src/" + str(self.test) + "/Makefile", "r")
         lines = f.readlines()
         f.close()
         cid = 0
