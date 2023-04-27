@@ -49,6 +49,7 @@ class TSVCBenchmarker(Benchmarker):
         print("PERFORMING COMPILATION FOR TSVC_2 TEST: " + str(compiler) + " " + self.mode + " " + str(self.test) + " " + str(self.group))
         FNULL = open(os.devnull, 'w')
         os.chdir('TSVC_2')
+        print("RUNNING PROGRAM AND TIMING FOR " + str(compiler) + " " + str(self.mode) + " " + str(self.test) + " " + str(self.group))
 
         if compiler == 'gcc':
             subprocess.run("make COMPILER={}".format('GNU'), shell=True, stdout=FNULL, stderr=FNULL)
