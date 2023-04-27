@@ -61,7 +61,7 @@ class TSVCBenchmarker(Benchmarker):
         cmd = './' + 'tsvc_{}_{}'.format(self.mode, self.test)
         print("")
         self.output = subprocess.getoutput(cmd).split('\n')
-        os.chdir('../../../..')
+        os.chdir('../../..')
 
     def report(self):
         ex_time = 0
