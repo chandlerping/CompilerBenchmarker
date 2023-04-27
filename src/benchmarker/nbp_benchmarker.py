@@ -48,7 +48,7 @@ class NBPBenchmarker(Benchmarker):
         cmd = './' + self.test + '.' + self.size
         print("RUNNING PROGRAM AND TIMING FOR "+ str(compiler) + " " + str(self.test) + " " + str(self.size) + " " + str(self.group))
         self.output = subprocess.getoutput(cmd).split('\n')
-        os.chdir('../../..')
+        os.chdir('../..')
 
     def report(self):
         os.chdir('NPB3.0-omp-C')
