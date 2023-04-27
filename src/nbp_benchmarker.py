@@ -11,6 +11,7 @@ class NBPBenchmarker(Benchmarker):
     group = 'li'
 
     def set_test(self, test, size, group):
+        print("Benchmark: NBP3.0")
         self.test = test
         self.size = size
         self.group = group

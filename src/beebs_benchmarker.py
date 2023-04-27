@@ -7,15 +7,14 @@ import re
 
 class BEEBSBenchmarker(Benchmarker):
     def __init__(self):
-        print("Initializing BEEBS")
         FNULL = open(os.devnull, 'w')
         os.chdir('beebs')
         subprocess.run('./configure', shell=True,stdout=FNULL,stderr=FNULL)
         subprocess.run('make', shell=True,stdout=FNULL,stderr=FNULL)
         os.chdir("../")
-        print("Finished Initializing\n")
 
     def set_test(self, test, group):
+        print("Benchmark: beebs")
         self.test = test
         self.group = group
         self.run()

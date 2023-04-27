@@ -11,6 +11,7 @@ class TSVCBenchmarker(Benchmarker):
     file_size = 0
 
     def set_test(self, mode, test, group):
+        print("Benchmark: TSVC_2")
         self.test = test
         self.group = group
         self.mode = mode
