@@ -58,6 +58,7 @@ class TSVCBenchmarker(Benchmarker):
 
         self.file_size = check_size('tsvc_{}_{}'.format(self.mode, self.test))
         cmd = './' + 'tsvc_{}_{}'.format(self.mode, self.test)
+        print("")
         self.output = subprocess.getoutput(cmd).split('\n')
         os.chdir('../../..')
 
