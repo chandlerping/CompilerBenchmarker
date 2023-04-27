@@ -39,7 +39,7 @@ class NBPBenchmarker(Benchmarker):
         f.close()
 
     def benchmark(self, compiler):
-        print("PERFORMING COMPILATION FOR NBP TEST: " + str(compiler) + " " + str(self.test) + " " + str(self.size) + " " + str(self.group))
+        print("\nPERFORMING COMPILATION FOR NBP TEST: " + str(compiler) + " " + str(self.test) + " " + str(self.size) + " " + str(self.group))
         FNULL = open(os.devnull, 'w')
         os.chdir('NPB3.0-omp-C')
         subprocess.run('mkdir bin', shell=True,stdout=FNULL,stderr=FNULL)

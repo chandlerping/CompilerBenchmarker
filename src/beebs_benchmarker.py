@@ -58,7 +58,7 @@ class BEEBSBenchmarker(Benchmarker):
         f.close()
 
     def benchmark(self, compiler):
-        print("PERFORMING COMPILATION FOR BEEBS TEST: " + str(compiler) + " " + str(self.test) + " " + str(self.group))
+        print("\nPERFORMING COMPILATION FOR BEEBS TEST: " + str(compiler) + " " + str(self.test) + " " + str(self.group))
         FNULL = open(os.devnull, 'w')
         os.chdir('beebs/src/' + str(self.test))
         subprocess.run('make clean', shell=True,stdout=FNULL,stderr=FNULL)
