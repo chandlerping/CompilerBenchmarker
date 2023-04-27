@@ -73,6 +73,6 @@ class BEEBSBenchmarker(Benchmarker):
         file_name = self.test
         if self.test == 'dijkstra':
             file_name += '_small'
-        file_size = check_size(str(self.test) + '.o')
+        file_size = check_size(str(file_name) + '.o')
         os.chdir('../../..')
         return file_size, self.output
