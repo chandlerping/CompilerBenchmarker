@@ -10,7 +10,7 @@ class BEEBSBenchmarker(Benchmarker):
         os.chdir('beebs')
         subprocess.run('./configure', shell=True,stdout=FNULL,stderr=FNULL)
         subprocess.run('make', shell=True,stdout=FNULL,stderr=FNULL)
-        os.chdir("../../")
+        os.chdir("../")
 
     def set_test(self, test, group):
         print("Benchmark: beebs")
@@ -19,7 +19,7 @@ class BEEBSBenchmarker(Benchmarker):
         self.run()
 
     def generate_config(self, compiler):
-        f = open("/src/" + str(self.test) + "/Makefile", "r")
+        f = open("beebs/src/" + str(self.test) + "/Makefile", "r")
         lines = f.readlines()
         f.close()
         cid = 0
@@ -58,7 +58,7 @@ class BEEBSBenchmarker(Benchmarker):
     def benchmark(self, compiler):
         print("\nPERFORMING COMPILATION FOR BEEBS TEST: " + str(compiler) + " " + str(self.test) + " " + str(self.group))
         FNULL = open(os.devnull, 'w')
-        os.chdir('/src/' + str(self.test))
+        os.chdir('beebs/src/' + str(self.test))
         subprocess.run('make clean', shell=True,stdout=FNULL,stderr=FNULL)
         subprocess.run('make', shell=True, stdout=FNULL,stderr=FNULL)
         self.iterations = 50
