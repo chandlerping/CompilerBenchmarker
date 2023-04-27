@@ -42,8 +42,8 @@ class NBPBenchmarker(Benchmarker):
         print("\nPERFORMING COMPILATION FOR NBP TEST: " + str(compiler) + " " + str(self.test) + " " + str(self.size) + " " + str(self.group))
         FNULL = open(os.devnull, 'w')
         os.chdir('NPB3.0-omp-C')
-        subprocess.run('mkdir bin', shell=True,stdout=FNULL,stderr=FNULL)
-        subprocess.run('make ' + self.test + ' CLASS=' + self.size, shell=True,stdout=FNULL)
+        subprocess.run('mkdir bin', shell=True, stdout=FNULL, stderr=FNULL)
+        subprocess.run('make ' + self.test + ' CLASS=' + self.size, shell=True, stdout=FNULL)
         os.chdir('bin')
         cmd = './' + self.test + '.' + self.size
         print("RUNNING PROGRAM AND TIMING FOR "+ str(compiler) + " " + str(self.test) + " " + str(self.size) + " " + str(self.group))
