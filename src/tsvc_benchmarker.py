@@ -63,10 +63,8 @@ class TSVCBenchmarker(Benchmarker):
         os.chdir('../../..')
 
     def report(self):
-        os.chdir('TSVC')
         ex_time = 0
         for line in self.output:
             if "Loop" not in line:
                 ex_time += float(line.split()[1])
-        os.chdir('..')
         return self.file_size, ex_time
