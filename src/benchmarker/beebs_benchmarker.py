@@ -66,7 +66,7 @@ class BEEBSBenchmarker(Benchmarker):
         cmd = "for i in {1.." + str(self.iterations) + "}; do time ./" + str(self.test) + "; done 2>&1 | grep ^real | sed -e s/.*m// | awk '{sum += $1} END {print sum / NR}'"
         process = subprocess.Popen(cmd, shell=True, executable="/bin/bash", text=True,stdout=subprocess.PIPE)
         self.output, err = process.communicate()   
-        os.chdir('../../..')
+        os.chdir('../..')
 
     def report(self):
         os.chdir('src/' + str(self.test))
