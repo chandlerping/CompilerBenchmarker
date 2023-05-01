@@ -1,4 +1,4 @@
-# CompilerBencharker
+# CompilerBenchmarker
 This is a framework to compare loop optimizations in llvm (clang) and gcc. The broader use is intended to allow users to create optimization groupings and import benchmark sets to provide repeatable testing for granular optimization groupings. 
 ## Optimizations
 Optimizations are grouped by their usages. Here we focus on loop optimizations which can be categorized into loop invariants, dead loops, unrolling loops and structure & memory.
@@ -42,3 +42,6 @@ BEEBS
 names: "aha-compress aha-mont64 bs bubblesort cnt compress cover crc crc32 ctl ctl-stack ctl-string ctl-vector cubic dijkstra dtoa duff edn expint fac fasta fdct fibcall fir frac huffbench insertsort janne_complex jfdctint lcdnum levenshtein ludcmp matmult matmult-float matmult-int mergesort miniz minver nbody ndes nettle-aes nettle-arcfour nettle-cast128 nettle-des nettle-md5 nettle-sha256 newlib-exp newlib-log newlib-mod newlib-sqrt ns nsichneu picojpeg prime qrduino qsort qurt recursion rijndael select sglib-arraybinsearch sglib-arrayheapsort sglib-arrayquicksort sglib-arraysort sglib-dllist sglib-hashtable sglib-listinsertsort sglib-listsort sglib-queue sglib-rbtree slre sqrt st statemate stb_perlin stringsearch1 strstr tarai template trio trio-snprintf trio-sscanf ud whetstone wikisort         
 
 sizes: default
+
+## More Information
+The paper that describes this framework is attached in ```docs/paper.pdf```
