@@ -14,7 +14,7 @@ lu[0] = [
     '-ftree-loop-ivcanon',
     '-faggressive-loop-optimizations',
     '-floop-unroll-and-jam',
-    '-funroll-loop',
+    '-funroll-loops',
     '-funroll-all-loops'
 ]
 lu[1] = [
@@ -40,4 +40,12 @@ sm[0] = [
 sm[1] = [
     '-loop-reduce',
     '-loop-simplify'
+]
+
+base = [[], []]
+base[0] = [
+    '-O0'
+]
+base[1] = [
+    '-O0'
 ]
