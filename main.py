@@ -27,14 +27,14 @@ from src.benchmarker.beebs_benchmarker import *
 
 def main():
     nbp_b = NBPBenchmarker()
-    nbp_b.set_test('ft', 'S', 'li')
+    nbp_b.set_test('ft', 'A', 'li')
 
-    # only use the first 4 tests in TSVC_2 for time concern, can uncomment more tests in "./TSVC_2/src/tsvc.c"
+    # # only use the first 4 tests in TSVC_2 for time concern, can uncomment more tests in "./TSVC_2/src/tsvc.c"
     tsvc_b = TSVCBenchmarker()
     tsvc_b.set_test('novec', 'default', 'lu')
 
     beebs = BEEBSBenchmarker()
-    beebs.set_test('dijkstra', 'sm')
+    beebs.set_test('dijkstra', 'default', 'dl')
 
 if __name__ == '__main__':
     main()

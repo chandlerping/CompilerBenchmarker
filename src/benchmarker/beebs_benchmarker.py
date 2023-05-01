@@ -12,9 +12,10 @@ class BEEBSBenchmarker(Benchmarker):
         subprocess.run('make', shell=True,stdout=FNULL,stderr=FNULL)
         os.chdir("../")
 
-    def set_test(self, test, group):
+    def set_test(self, test, mode, group):
         print("Benchmark: beebs")
         self.test = test
+        self.mode = mode
         self.group = group
         self.run()
 
