@@ -10,6 +10,13 @@ from src.benchmarker.beebs_benchmarker import *
 #####################################################################################
 
 #####################################################################################
+#                               NBP BENCHMARK OPTIONS                               #
+# where <mode-name> is : "novec" or "vec"                                           #
+#                                                                                   #
+# where <math-flag>: "default" "relaxed" or "precise"                               #
+#####################################################################################
+
+#####################################################################################
 #                               BEEBS BENCHMARK OPTIONS                             #
 # where <benchmark-name> is:                                                        #
 # aha-compress aha-mont64 bs bubblesort cnt compress cover crc crc32 ctl            #
@@ -29,7 +36,7 @@ def main():
     nbp_b = NBPBenchmarker()
     nbp_b.set_test('ft', 'A', 'li')
 
-    # # only use the first 4 tests in TSVC_2 for time concern, can uncomment more tests in "./TSVC_2/src/tsvc.c"
+    # only use the first 4 tests in TSVC_2 for time concern, can uncomment more tests in "./TSVC_2/src/tsvc.c"
     tsvc_b = TSVCBenchmarker()
     tsvc_b.set_test('novec', 'default', 'lu')
 
