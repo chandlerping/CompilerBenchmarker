@@ -13,7 +13,7 @@ In practice, these benchmarks would be chosen by the user to align with their sp
 ### Dependencies
 To run this you will need a few packages. The basic requirements are:
 ```
-python clang cmake texinfo
+python3 clang cmake texinfo
 ```
 They can all be installed with a ```sudo apt-get install```
 
