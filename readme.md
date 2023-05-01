@@ -10,6 +10,14 @@ In practice, these benchmarks would be chosen by the user to align with their sp
 ## Running
 ```main.py``` is a small demo. It shows how each of the different benchmarks can be used. For this particular demo it is useful for the user to know the following:
 
+### Dependencies
+To run this you will need a few packages. The basic requirements are:
+```
+python clang cmake texinfo
+```
+They can all be installed with a ```sudo apt-get install```
+
+
 In order to set up a benchmark it first must be initialized, for example:
 ```python
 nbp_b = NBPBenchmarker()
@@ -18,10 +26,6 @@ nbp_b = NBPBenchmarker()
 Then to create a test, each benchmark class is based off of the template ```benchmarker.py``` class. Thus, all have the function ```set_test(name, size, opt_group)```. It can be used as follows:
 ```python
 nbp_b.set_test('ft', 'A', 'li')
-```
-NOTE: You will also need the package texinfo to run the BEEBS benchmark. It can be installed with:
-```
-sudo apt-get install texinfo
 ```
 
 NOTE: Each benchmark has different grouping in terms of name and size, but all use the optimization groupings as described: li (loop invariants), lu (loop unrolling), dl (dead loops), sm (loop structure and memory), and base (O0). These groupings can be defined in ```src/opt_group.py```. The different names and sizes are described below for the demo benchmarks.
