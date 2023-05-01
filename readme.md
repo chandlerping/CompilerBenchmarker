@@ -19,6 +19,11 @@ Then to create a test, each benchmark class is based off of the template ```benc
 ```python
 nbp_b.set_test('ft', 'A', 'li')
 ```
+NOTE: You will also need the package texinfo to run the BEEBS benchmark. It can be installed with:
+```
+sudo apt-get install texinfo
+```
+
 NOTE: Each benchmark has different grouping in terms of name and size, but all use the optimization groupings as described: li (loop invariants), lu (loop unrolling), dl (dead loops), sm (loop structure and memory), and base (O0). These groupings can be defined in ```src/opt_group.py```. The different names and sizes are described below for the demo benchmarks.
 
 Running this test as described will compile with the given grouping and time the resulting test.
